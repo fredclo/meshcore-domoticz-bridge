@@ -1,0 +1,9 @@
+[Unit]
+Description=Poll MeshCore repeater telemetry -> Domoticz (oneshot)
+After=network.target mosquitto.service domoticz.service
+
+[Service]
+Type=oneshot
+User=pi
+ExecStart=/home/pi/meshcore-venv/bin/python3 /opt/meshcore/meshcore_to_domoticz.py
+TimeoutStartSec=180

@@ -1,0 +1,11 @@
+[Unit]
+Description=Run MeshCore repeater poll every 3 hours
+
+[Timer]
+OnBootSec=2min
+OnUnitActiveSec=3h
+AccuracySec=1s
+Unit=meshcore-poll.service
+
+[Install]
+WantedBy=timers.target
